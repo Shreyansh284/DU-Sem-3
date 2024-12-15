@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+        }
+        [data-Attribute]{
+        background-color: brown;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    [data-Attribute]:hover{
+        border: 1px solid brown;
+        color: brown;
+        background-color: white;
+    }
+    [data-Attribute="sa1"]
+    {
+        background-color: rgb(151, 165, 42);
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+
+    }
+    [data-Attribute="sa1"]:hover{
+        border: 1px solid rgb(151, 165, 42);
+        color: rgb(151, 165, 42);
+        background-color: white;
+    }
+    [data-Attribute="sa2"]
+    {
+        background-color: rgb(42, 104, 165);
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    [data-Attribute="sa2"]:hover{
+        border: 1px solid rgb(42, 104, 165);
+        color: rgb(42, 104, 165);
+        background-color: white;
+    }
+    [data-Attribute="sa3"]
+    {
+        background-color: rgb(165, 42, 155);
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    [data-Attribute="sa3"]:hover{
+        border: 1px solid rgb(165, 42, 155);
+        color: rgb(165, 42, 130);
+        background-color: rgb(255, 255, 255);
+    }
+    [data-image1]{
+
+        background-image: url('https://picsum.photos/seed/picsum/200/300');
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 300px;
+       margin-top: 20px;
+
+    
+
+    }
+
+    </style>
+</head>
+<body>
+    
+    <h3 style="color: brown;">Comman Attribute</h3>
+    <div  class="container" style="border: 1px solid brown ; padding:20px ;text-align: center;" >
+        <a href="" data-Attribute="">Comman Attribute For All</a>
+        <a href="" data-Attribute="">Comman Attribute For All</a>
+        <a href="" data-Attribute="">Comman Attribute For All</a>
+       
+    </div>
+    <h3 style="color:rgb(11, 66, 124)">Specfic Attribute</h3>
+    <div  class="container" style="border: 1px solid rgb(42, 151, 165) ; padding:20px ;text-align: center;" >
+        <a href="" data-Attribute="sa1">Specfic Attribute 1</a>
+        <a href="" data-Attribute="sa2">Specfic Attribute 2 </a> 
+        <a href="" style="margin-left: 4px;" data-Attribute="sa3">Specfic Attribute 3</a>
+           </div>
+
+    
+
+</body>
+</html>

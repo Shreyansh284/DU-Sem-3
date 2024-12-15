@@ -1,0 +1,209 @@
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        int result = 10 / 0; // This will throw ArithmeticException
+        System.out.println(result);
+    }
+}
+
+
+public class ArrayIndexOutOfBoundsExceptionExample {
+    public static void main(String[] args) {
+        int[] arr = new int[3];
+        System.out.println(arr[5]); // This will throw ArrayIndexOutOfBoundsException
+    }
+}
+
+
+public class ClassCastExceptionExample {
+    public static void main(String[] args) {
+        Object x = new Integer(10);
+        String y = (String) x; // This will throw ClassCastException
+    }
+}
+
+
+public class IllegalArgumentExceptionExample {
+    public static void main(String[] args) {
+        Thread t = new Thread();
+        t.setPriority(11); // Priority out of range (1-10), will throw IllegalArgumentException
+    }
+}
+
+
+public class IllegalThreadStateExceptionExample {
+    public static void main(String[] args) {
+        Thread t = new Thread();
+        t.start();  // Start the thread
+        t.start();  // Trying to start the thread again, will throw IllegalThreadStateException
+    }
+}
+
+
+import java.util.ArrayList;
+
+public class IndexOutOfBoundsExceptionExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.get(5); // This will throw IndexOutOfBoundsException
+    }
+}
+
+public class NegativeArraySizeExceptionExample {
+    public static void main(String[] args) {
+        int[] arr = new int[-5]; // This will throw NegativeArraySizeException
+    }
+}
+
+
+public class NullPointerExceptionExample {
+    public static void main(String[] args) {
+        String str = null;
+        System.out.println(str.length()); // This will throw NullPointerException
+    }
+}
+
+
+public class NumberFormatExceptionExample {
+    public static void main(String[] args) {
+        String str = "abc";
+        int num = Integer.parseInt(str); // This will throw NumberFormatException
+    }
+}
+
+
+public class StringIndexOutOfBoundsExceptionExample {
+    public static void main(String[] args) {
+        String str = "Hello";
+        System.out.println(str.charAt(10)); // This will throw StringIndexOutOfBoundsException
+    }
+}
+
+
+///////////////////////////CHECKED///////////////////////////////////////////
+
+
+public class ClassNotFoundExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.example.MyClass"); // Class does not exist
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class IOExceptionExample {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("non_existent_file.txt"); // File does not exist
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+public class CloneNotSupportedExceptionExample implements Cloneable {
+    public static void main(String[] args) {
+        CloneNotSupportedExceptionExample example = new CloneNotSupportedExceptionExample();
+        try {
+            CloneNotSupportedExceptionExample clone = (CloneNotSupportedExceptionExample) example.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+import java.lang.reflect.Field;
+
+public class IllegalAccessExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Class<?> c = Example.class;
+            Field privateField = c.getDeclaredField("privateField");
+            privateField.setAccessible(true); // Bypass access control
+            privateField.set(new Example(), 42); // This will throw IllegalAccessException
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class Example {
+    private int privateField = 0;
+}
+
+
+public class InstantiationExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Class<?> c = AbstractClass.class;
+            Object obj = c.newInstance(); // Cannot instantiate abstract class
+        } catch (InstantiationException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+abstract class AbstractClass {
+    // Abstract class definition
+}
+
+
+public class InterruptedExceptionExample {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("Thread was interrupted!");
+            }
+        });
+
+        t.start();
+        t.interrupt(); // Interrupt the thread
+    }
+}
+
+import java.lang.reflect.Field;
+
+public class NoSuchFieldExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Class<?> c = ExampleClass.class;
+            Field field = c.getDeclaredField("nonExistentField"); // Field does not exist
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class ExampleClass {
+    private int existingField;
+}
+
+
+
+import java.lang.reflect.Method;
+
+public class NoSuchMethodExceptionExample {
+    public static void main(String[] args) {
+        try {
+            Class<?> c = ExampleClass.class;
+            Method method = c.getDeclaredMethod("nonExistentMethod"); // Method does not exist
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class ExampleClass {
+    public void existingMethod() {
+        // Method definition
+    }
+}

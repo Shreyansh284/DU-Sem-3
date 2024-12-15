@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animations In CSS</title>
+    <style>
+      .container {
+        position: relative;
+        border: 1px solid black;
+        height: 500px;
+        width: 500px;
+      }
+
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        animation: squareLoop 5s ease-in-out alternate infinite;
+      }
+
+      @keyframes squareLoop {
+        0% {
+          top: 0;
+          left: 0;
+          background-color: red;
+        }
+        25% {
+          top: 0;
+          left: 450px;
+        }
+        50% {
+          top: 450px;
+          left: 450px;
+        }
+        75% {
+          top: 450px;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+          background-color: yellow;
+        }
+      }
+
+      .link {
+        font-size: 25px;
+        color: orange;
+        text-decoration: none;
+      }
+
+      .link:hover {
+        color: purple;
+        text-decoration: underline;
+        transition: all 0.5s ease;
+      }
+
+      .link:visited {
+        color: red;
+      }
+
+      .para::first-line {
+        font-size: 26px;
+        color: red;
+      }
+
+      .para::first-letter {
+        font-size: 45px;
+        color: rebeccapurple;
+      }
+
+      *::selection {
+        background-color: yellow;
+      }
+
+      .customAnimation {
+        animation: zoomEffect 3s ease-in infinite;
+      }
+
+      @keyframes zoomEffect {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      .screenSaverText {
+        position: absolute;
+        font-weight: 800;
+        font-family: cursive;
+        animation: screenSaverEffect 2s ease 2 alternate;
+      }
+
+      @keyframes screenSaverEffect {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 500px;
+          left: 800px;
+        }
+        50% {
+          top: 0;
+          left: 800px;
+        }
+        75% {
+          top: 500px;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+    <!-- <!-- <a class="link" href="#">Link</a> -->
+    <p class="para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quo
+      porro sint exercitationem tenetur accusamus fugiat natus laudantium eaque,
+      iusto consequuntur consequatur corrupti sed nihil laborum cupiditate
+      explicabo animi?Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Autem corporis at excepturi error modi iste minima laborum perspiciatis
+      ea, voluptatem inventore ducimus, quam praesentium eum non! Pariatur quod
+      rerum iusto?Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Maiores sapiente fugit facere blanditiis numquam, libero labore quae ut
+      vel pariatur dolor fuga possimus aperiam eaque doloribus iusto nihil?
+      Iste, maiores.
+    </p> -->
+    <div>
+      <img
+        src="https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_640.jpg"
+        alt=""
+        class="customAnimation"
+      />
+    </div> <div class="screenSaver">
+      <h1 class="screenSaverText">Testing...</h1>
+    </div>
+  </body>
+</html>

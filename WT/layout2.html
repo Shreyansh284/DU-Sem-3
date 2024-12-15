@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 1px solid black;
+      }
+      .nav {
+        display: flex;
+        flex-direction: row;
+      
+        text-align: center;
+      }
+      .navlogo {
+        border: 2px solid rgb(255, 81, 0);
+        text-align: center;
+        padding: 10px;
+        height: 20px;
+        width: 10%;
+      }
+      .navitem {
+        border: 2px solid rgb(41, 60, 173);
+        height: 20px;
+        padding: 10px;
+        width: 90%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+      }
+      .navitem ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        color: blue;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 10px;
+        border: 2px solid #3a67e3;
+      }
+      .main{
+        display: flex;
+      }
+      .sidebar{
+        /* height: 30vh; */
+        border: 2px solid rgb(255, 81, 0);
+
+       padding: 10px;
+       width: 15%;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+      }
+      .sidebar div{
+        margin-bottom: 10px;
+        border:2px solid black ;
+        padding: 10px;
+        
+      }
+      .mainContant{
+        border: 2px solid rgb(10, 135, 24);
+        padding: 20px;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      .mainBox1 , .mainBox2 {
+        border: 2px solid rgb(100, 12, 168);
+        padding: 30px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+
+      }
+      .box1_1,.box1_2{
+        border: 2px dashed rgb(229, 39, 39);
+        padding: 40px;
+        width: 40%;
+      }
+      .box2_1,.box2_2,.box2_3{
+        border: 2px dashed rgb(224, 43, 43);
+        padding: 40px;
+        width: 40%;
+      }
+      
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <div class="navlogo">Logo Here</div>
+        <div class="navitem">
+          <ul>
+            <a href="">
+                <li>Home</li>
+            </a>
+            <a href="">
+                <li>About</li>
+            </a>
+            <a href="">
+                <li>Contact</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="sidebar">
+          <div> RESULT</div>
+          <div> APPLY</div>
+          <div> PLACEMENT</div>
+          <div> RECRUTMENT</div>
+          <div>NEWS</div>
+        </div>
+        <div class="mainContant">
+            <div class="mainBox1">
+                <div class="box1_1"></div>
+                <div class="box1_2"></div>
+            </div>
+            <div class="mainBox2">
+                <div class="box2_1"></div>
+                <div class="box2_2"></div>
+                <div class="box2_3"></div>
+            </div>
+        </div>
+      </div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>

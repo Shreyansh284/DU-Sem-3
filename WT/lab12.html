@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .main
+        {
+            display: flex;
+            /* flex-direction: column;  */
+            gap: 20px;
+            justify-content: center;
+        }
+        #container,#container2,#container3{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: aliceblue;
+            height: 300px;
+            width: 300px;
+            justify-items: center;
+            text-align: center;
+            padding: 10px;
+            border:2px solid brown;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+ <Button id="btn">Button To Change Background</Button>
+ <Button id="timeBtn">Button To See Time</Button>
+ <Button id="redBtn">Button To Red</Button>
+ <Button id="greenBtn">Button To Green</Button>
+ <p id="time"></p>
+ <br><br>
+ 
+ <h1 id="heading">HEADING</h1>
+ <div class="main">
+
+    <div id="container" ></div>
+    <div id="container2" ></div>
+    <div id="container3" >
+       <form id="form">
+           <input type="text">
+           <input type="submit" >
+        </form>
+        <p id="p"></p>
+    </div>
+    
+    
+</div>
+<p id="keycode"></p>
+</body>
+<script>
+
+    btn.addEventListener("click",()=>
+{
+    let r=Math.floor(Math.random()*255)
+    let g=Math.floor(Math.random()*255)
+    let b=Math.floor(Math.random()*255)
+    document.body.style.background=`rgb(${r},${g},${b})`
+}
+    )
+
+container.addEventListener("mousedown",()=>{
+    container.innerHTML="mousedown"
+})
+container.addEventListener("mouseup",()=>{
+    container.innerHTML="mouseup"
+
+})
+
+container.addEventListener("mouseover",()=>{
+    container.innerHTML="mouseover"
+
+})
+container.addEventListener("mouseout",()=>{
+    container.innerHTML="mouseout"
+
+})
+container.addEventListener("mousemove",()=>{
+    container.innerHTML="mousemove"
+
+})
+container.addEventListener("mouseleave",()=>{
+    container.innerHTML="mouseleave"
+
+})
+
+window.addEventListener("keydown",(e)=>{
+    container2.innerText=e.type
+    keycode.innerText=e.keyCode
+})
+window.addEventListener("keyup",(e)=>{
+    container2.innerText=e.type
+})
+window.addEventListener("keypress",(e)=>{
+    container2.innerText=e.type
+})
+
+//   all form events
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        p.innerText = e.type;
+      });
+      form.addEventListener("reset", (e) => {
+        p.innerHTML = e.type;
+      });
+      form.addEventListener("change", (e) => {
+        p.innerHTML = e.type;
+      });
+      form.addEventListener("input", (e) => {
+        p.innerHTML = e.type;
+      });
+      form.addEventListener("focus", (e) => {
+        p.innerHTML = e.type;
+      });
+      form.addEventListener("blur", (e) => {
+        p.innerHTML = e.type;
+      });
+
+      container.addEventListener("mouseover",()=>{
+    container.innerHTML="mouseover"
+
+})
+heading.addEventListener("mouseout",()=>{
+    heading.style.color="black"
+
+})
+heading.addEventListener("mouseover",()=>{
+    heading.style.color="yellow"
+
+})
+timeBtn.addEventListener("click",()=>{
+    time.innerHTML=new  Date().toLocaleTimeString() + " <br >"+ new Date().toLocaleDateString()
+
+})
+    
+redBtn.addEventListener("click",()=>{
+    document.body.style.background="red"
+
+})
+    
+greenBtn.addEventListener("click",()=>{
+    document.body.style.background="green"
+
+})
+
+window.addEventListener("keypress",()=>
+{
+    if(e.key=='a'||e.key=='e'||e.key=='i'||e.key=='o'||e.key=='u')
+    {
+          SpeechSynthesisUtterance.voice =
+            window.speechSynthesis.getVoices()[0];
+          let msg = new SpeechSynthesisUtterance(e.key);
+          msg.voice = window.speechSynthesis.getVoices()[3];
+          msg.pitch = 1;
+          msg.rate = 1;
+          msg.volume = 2;
+          window.speechSynthesis.speak(msg);
+        }
+})
+</script>
+</html>

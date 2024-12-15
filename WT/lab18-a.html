@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab 18-a</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .btn-remove {
+        display: flex !important;
+        align-content: center !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        /* font-size: 20px; */
+        height: 30px;
+        width: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="nav w-100 bg-dark text-white d-flex align-items-center justify-content-between p-2"
+    >
+      <div class="logo"><h3>LOGO</h3></div>
+      <div class="nav-items">
+        <ul class="d-flex gap-4 list-unstyled">
+          <li>Home</li>
+          <li class="text-secondary">Contact</li>
+          <li class="text-secondary">About us</li>
+          <li class="text-secondary">
+            Messages<span class="badge text-bg-success mx-2">12</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main p-2">
+      <div class="dashboard">
+        <h4>Dashboard:</h4>
+
+        <div class="card p-2">
+          <table class="table table-striped table-hover">
+            <thead>
+              <th>Name</th>
+              <th>Team</th>
+              <th>All Star</th>
+              <th>Remove</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Steph</td>
+                <td>Warriors</td>
+                <td>Yes</td>
+                <td><button class="btn btn-danger btn-remove">x</button></td>
+              </tr>
+              <tr>
+                <td>Steph</td>
+                <td>Warriors</td>
+                <td>Yes</td>
+                <td><button class="btn btn-danger btn-remove">x</button></td>
+              </tr>
+              <tr>
+                <td>Steph</td>
+                <td>Warriors</td>
+                <td>Yes</td>
+                <td><button class="btn btn-danger btn-remove">x</button></td>
+              </tr>
+              <tr>
+                <td>Steph</td>
+                <td>Warriors</td>
+                <td>Yes <span class="badge text-bg-warning">Last</span></td>
+                <td><button class="btn btn-danger btn-remove">x</button></td>
+              </tr>
+              <tr>
+                <td>Steph</td>
+                <td>Warriors</td>
+                <td>Yes <span class="badge text-bg-success">First</span></td>
+                <td><button class="btn btn-danger btn-remove  ">x</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="todos mt-3">
+        <h4>Todos:</h4>
+        <div class="alert alert-success" role="alert">
+          Feel good about bootstrap
+        </div>
+        <div class="alert alert-primary" role="alert">
+          Feel informed about bootstrap
+        </div>
+        <div class="alert alert-warning" role="alert">
+          Feel warned about bootstrap
+        </div>
+        <div class="alert alert-warning" role="alert">
+          Maybe i should read the docs..
+        </div>
+        <div class="alert alert-danger" role="alert">Danger Zone</div>
+        <div class="alert alert-danger" role="alert">
+          i really should read the docs..
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

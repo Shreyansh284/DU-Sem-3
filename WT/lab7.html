@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-1</title>
+  </head>
+  <body>
+    <script>
+      //* 1
+      // let num1, num2, choice, res;
+      // num1 = prompt("Enter number 1 : ");
+      // num2 = prompt("Enter number 2 : ");
+      // choice = prompt("Enter choice (+,-,*,/)");
+
+      // switch (choice) {
+      //   case "+":
+      //     res = parseInt(num1) + parseInt(num2);
+      //     alert(res);
+      //     break;
+      //   case "-":
+      //     res = parseInt(num1) - parseInt(num2);
+      //     alert(res);
+      //     break;
+      //   case "*":
+      //     res = parseInt(num1) * parseInt(num2);
+      //     alert(res);
+      //     break;
+      //   case "/":
+      //     res = parseInt(num1) / parseInt(num2);
+      //     alert(res);
+      //     break;
+      //   default:
+      //     alert("Please Enter only +,-,*,/ choice.");
+      //     break;
+      // }
+      //* 2
+      //   let num = parseInt(prompt("Enter Number : "));
+      //   let flag = true;
+      //   if (num <= 1) {
+      //     flag = false;
+      //   } else {
+      //     for (let index = 2; index <= Math.sqrt(num); index++) {
+      //       if (num % index == 0) {
+      //         flag = false;
+      //         break;
+      //       }
+      //     }
+      //   }
+
+      //   if (flag) alert(`${num} is a prime number.`);
+      //   else alert(`${num} is a not prime number.`);
+      //* 3
+      //   let num = parseInt(prompt("Enter number : "));
+      //   let fact = 1;
+      //   for (let index = 2; index <= num; index++) {
+      //     fact *= index;
+      //   }
+      //   alert(`${fact}`);
+      //* 4
+      // let num = parseInt(prompt("Enter range: "));
+      // const printFibonacci = (num) => {
+      //   if (isNaN(num)) return;
+      //   let fib = [];
+      //   let n1 = 0,
+      //     n2 = 1,
+      //     temp;
+      //   for (let index = 0; index <= num; index++) {
+      //     fib.push(n1);
+      //     temp = n1 + n2;
+      //     n1 = n2;
+      //     n2 = temp;
+      //   }
+      //   console.log(fib);
+      // };
+      // printFibonacci(num);
+      // const printFibonacciWithRecursion = (num) => {
+      //   let fib = [0, 1];
+      //   for (let i = 2; i <= num; i++) {
+      //     fib[i] = fib[i - 1] + fib[i - 2];
+      //   }
+
+      //   return fib.slice(0, num + 1);
+      // };
+      // alert(printFibonacci(num));
+      //* 5
+      //   let num = parseInt(prompt("Enter a number : "));
+      //   let temp = num;
+      //   let reversed = 0;
+      //   while (temp > 0) {
+      //     let digit = temp % 10;
+      //     reversed = reversed * 10 + digit;
+      //     temp = Math.floor(temp / 10);
+      //   }
+      //   if (num === reversed) alert(`${num} is a palindrome number.`);
+      //   else alert(`${num} is a not palindrome number.`);
+      //* 6
+      //   let num = parseInt(prompt("Enter a number : "));
+      //   let sum = 0;
+      //   let temp = num;
+      //   let numOfDigits = num.toString().length;
+      //   while (temp > 0) {
+      //     let digit = temp % 10;
+      //     sum += Math.pow(digit, numOfDigits);
+      //     temp = Math.floor(temp / 10);
+      //   }
+      //   if (sum === num) {
+      //     alert(`${num} is an Armstrong number.`);
+      //   } else {
+      //     alert(`${num} is not an Armstrong number.`);
+      //   }
+    </script>
+  </body>
+</html>

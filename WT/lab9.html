@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let nums = [];
+      const size = parseInt(prompt("Enter size of arr"));
+      for (let i = 0; i < size; i++) {
+        nums.push(parseInt(prompt(`Enter a[${i}]`)));
+      }
+
+      // * 1
+      const findMaximumNumber = (arr) => {
+        let max = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > max) {
+            max = arr[i];
+          }
+        }
+        console.log(max);
+      };
+
+      // findMaximumNumber(nums);
+
+      // * 2
+      //   nums.sort();
+      // console.log(nums);
+
+      // * 3
+      const bubbleSort = (arr) => {
+        for (var i = 0; i < arr.length; i++) {
+          for (var j = 0; j < arr.length; j++) {
+            // if (arr[j] > arr[j + 1]) {
+            //   var temp = arr[j];
+            //   arr[j] = arr[j + 1];
+            //   arr[j + 1] = temp;
+            // }
+            // if (arr[i] < arr[j]) {
+            //   var temp = arr[i];
+            //   arr[i] = arr[j];
+            //   arr[j] = temp;
+            // }
+            if (arr[i] < arr[j]) {
+                [arr[i], arr[j] = arr[j], arr[i]]
+            }
+          }
+        }
+      };
+
+      //   bubbleSort(nums);
+    </script>
+  </body>
+</html>

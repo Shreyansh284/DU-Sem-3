@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        ma
+        } */
+    </style>
+  </head>
+  <body>
+    <button type="button" id="btn">CLick ME</button>
+    <button type="button" id="btn2">CLick ME</button>
+    <p id="p1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid deserunt
+      similique officiis, accusamus sint sunt ipsam sapiente facere consequuntur
+      cupiditate et, est hic assumenda quisquam quos aliquam ducimus rerum
+      pariatur.
+    </p>
+    <p id="p2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid deserunt
+      similique officiis, accusamus sint sunt ipsam sapiente facere consequuntur
+      cupiditate et, est hic assumenda quisquam quos aliquam ducimus rerum
+      pariatur.
+    </p>
+
+    <ul>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+    </ul>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        $("#btn").on("click", function () {
+          $("#p1").text("Button clicked!");
+          $(this).css("background", "brown").slideDown(1000).fadeIn(1000);
+
+          $(this).animate({
+            marginLeft: "200px",
+          });
+        });
+        $("li").on("click", (e) => {
+          alert(e.target.textContent);
+          console.log(e.target.textContent);
+        });
+        $('#p1').hide();
+            $('#btn2').on('click',()=>{
+                $('#p1').slideToggle();
+            })
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+    }
+    #myCanvas{
+   
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <!-- 9. Create a Snake game using Java script. -->
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+    <script>
+      document.addEventListener("keydown", function (event) {
+        if (event.keyCode === 37) {
+          snake.moveLeft();
+        } else if (event.keyCode === 38) {
+          snake.moveUp();
+        } else if (event.keyCode === 39) {
+          snake.moveRight();
+        } else if (event.keyCode === 40) {
+          snake.moveDown();
+        }
+      });
+
+      const snake = {
+        x: 100,
+        y: 100,
+        length: 1,
+        direction: "right",
+        canvas: document.getElementById("myCanvas"),
+        ctx: document.getElementById("myCanvas").getContext("2d"),
+        draw: function () {
+          this.ctx.beginPath();
+          this.ctx.rect(this.x, this.y, 10, 10);
+          this.ctx.fillStyle = "green";
+          this.ctx.fill();
+          this.ctx.closePath();
+        },
+        move: function (x, y) {
+          this.x = x;
+          this.y = y;
+        },
+        moveLeft: function () {
+          if (this.direction !== "right") {
+            this.direction = "left";
+          }
+          this.x -= 10;
+          this.draw();
+        },
+        moveUp: function () {
+          if (this.direction !== "down") {
+            this.direction = "up";
+          }
+          this.y -= 10;
+          this.draw();
+        },
+        moveRight: function () {
+          if (this.direction !== "left") {
+            this.direction = "right";
+          }
+          this.x += 10;
+          this.draw();
+        },
+        moveDown: function () {
+          if (this.direction !== "up") {
+            this.direction = "down";
+          }
+          this.y += 10;
+          this.draw();
+        },
+      };
+
+      snake.draw();
+    </script>
+
+    <!-- 11 -->
+    <!-- make a list of checkboxes -->
+    <!-- <div class="container"></div>
+
+    <div id="selected"></div> -->
+
+    <!-- <script>
+      // * 10
+      //   document.addEventListener("mousedown", function (event) {
+      //     if (event.button === 0) {
+      //       alert("Left Clicked");
+      //     } else if (event.button === 2) {
+      //       alert("Right Clicked");
+      //     }
+      //   });
+
+      // * 11
+      // make a list of students with roll numbers and names
+      let students = [
+        { name: "John", rollNumber: 101 },
+        { name: "Jane", rollNumber: 102 },
+        { name: "Tom", rollNumber: 103 },
+        { name: "Jim", rollNumber: 104 },
+      ];
+
+      // make a list of checkboxes
+      document.addEventListener("DOMContentLoaded", function () {
+        let buffer = "";
+
+        students.forEach((student) => {
+          buffer += `
+                 <input type="checkbox" id="${student.rollNumber}" 
+                 name="${student.rollNumber}" value="${student.rollNumber}-${student.name}" />
+                 <label for="checkbox1">${student.rollNumber} - ${student.name}</label><br />
+            `;
+        });
+
+        document.querySelector(".container").innerHTML += buffer;
+        let checkboxes = document.querySelectorAll("input[type='checkbox']");
+
+        checkboxes.forEach((checkbox) => {
+        
+          checkbox.addEventListener("change", function (e) {
+            selected.innerHTML += e.target.value + ",";
+          });
+        });
+      });
+    </script> -->
+    <!-- <script src="lab13.js"></script> -->
+  </body>
+</html>

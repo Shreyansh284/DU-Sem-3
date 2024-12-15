@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays in js</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .app-container {
+        padding: 15px;
+      }
+
+      .container {
+        display: flex;
+        /* align-items: center; */
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 10px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+        /* background-color: rgba(245, 245, 245, 0.875); */
+        background-color: #eae4ddc3;
+        min-width: 300px;
+      }
+
+      .card .image img {
+        border-radius: 5px;
+        width: 100%;
+        object-fit: cover;
+        height: 200px;
+      }
+
+      .badges {
+        padding-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .badge {
+        padding: 8px;
+        border-radius: 5px;
+        /* background-color: orange; */
+        background-color: #cdc2a5;
+        font-weight: bold;
+        font-size: 17px;
+        color: white;
+      }
+
+      .card h2 {
+        color: #000;
+        /* color: #CDC2A5; */
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .content {
+        padding: 8px;
+      }
+
+      .desg {
+        color: #736a62;
+        text-align: center;
+        padding-bottom: 5px;
+      }
+
+      .badge-time {
+        padding: 8px;
+        border-radius: 5px;
+        /* background-color: black; */
+        background-color: #295f98;
+        font-weight: bold;
+        font-size: 17px;
+        color: white;
+      }
+
+      .faculty-heading {
+        color: #cdc2a5;
+        font-weight: 900;
+      }
+
+      /* * Student */
+      .student-heading {
+        color: #cdc2a5;
+        font-weight: 900;
+      }
+
+      .container-student {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 10px;
+      }
+
+      /* * Product */
+      .product-heading {
+        color: #cdc2a5;
+        font-weight: 900;
+      }
+
+      .container-product {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-container">
+      <h1 class="faculty-heading">Faculties</h1>
+      <div class="container"></div>
+
+      <h1 class="student-heading">Students</h1>
+      <div class="container-student"></div>
+
+      <h1 class="product-heading">Products</h1>
+      <div class="container-product"></div>
+    </div>
+    <script>
+      let faculties = [
+        {
+          FacultyID: 1,
+          FacultyName: "Dr. Gopi Sanghani",
+          FacultyDesignation: "Dean - School of Computer Science",
+          FacultyEducationQualification: "Ph.D. , M.E. (CE)",
+          FacultyExperience: "22+ Years",
+          FacultyWorkingSince: "Jul-2012",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/5---29-04-2023-11-00-29.jpg",
+        },
+        {
+          FacultyID: 2,
+          FacultyName: "Dr. Nilesh Gambhava",
+          FacultyDesignation: "Professor",
+          FacultyEducationQualification: "Ph.D. , M.E. (CE)",
+          FacultyExperience: "21+ Years",
+          FacultyWorkingSince: "Jul-2009",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/3---28-04-2023-02-02-42.jpg",
+        },
+
+        {
+          FacultyID: 3,
+          FacultyName: "Dr. Pradyumansinh Jadeja",
+          FacultyDesignation: "Professor",
+          FacultyEducationQualification: "Ph.D., M.E. (CE)",
+          FacultyExperience: "19+ Years",
+          FacultyWorkingSince: "Jul-2009",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/6---28-04-2023-02-06-07.jpg",
+        },
+        {
+          FacultyID: 4,
+          FacultyName: "Prof. Maulik Trivedi",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D.(Pursuing), M.Tech.(CSE)",
+          FacultyExperience: "16+ Years",
+          FacultyWorkingSince: "Jun-2009",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/8---28-04-2023-02-06-25.jpg",
+        },
+        {
+          FacultyID: 5,
+          FacultyName: "Prof. Firoz Sherasiya",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D.(Pursuing), M.E. (CE)",
+          FacultyExperience: "19+ Years",
+          FacultyWorkingSince: "Dec-2022",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/12---28-04-2023-02-06-51.jpg",
+        },
+        {
+          FacultyID: 6,
+          FacultyName: "Prof. Rupesh Vaishnav",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D. (Pursuing), M.E. (CE)",
+          FacultyExperience: "16+ Years",
+          FacultyWorkingSince: "May-2013",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/10---28-04-2023-02-07-03.jpg",
+        },
+        {
+          FacultyID: 7,
+          FacultyName: "Prof. Arjun Bala",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D.(Pursuing), M.Tech.(CSE)",
+          FacultyExperience: "14+ Years",
+          FacultyWorkingSince: "Jul-2013",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/15---28-04-2023-02-07-35.jpg",
+        },
+        {
+          FacultyID: 8,
+          FacultyName: "Prof. Naimish Vadodariya",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D. (Pursuing), M.E. (CE)",
+          FacultyExperience: "11+ Years",
+          FacultyWorkingSince: "Jun-2015",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/214---28-04-2023-02-08-35.jpg",
+        },
+        {
+          FacultyID: 9,
+          FacultyName: "Prof. Vaseem Ghada",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "Ph.D. (Pursuing), M.Tech (ICT)",
+          FacultyExperience: "15+ Years",
+          FacultyWorkingSince: "Aug-2021",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/317---28-04-2023-01-32-29.jpg",
+        },
+        {
+          FacultyID: 10,
+          FacultyName: "Dr. Sharon Mohtra",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "PhD. in Computer Science, MCA, BCA",
+          FacultyExperience: "22+ Years",
+          FacultyWorkingSince: "Jul-2022",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/363---29-04-2023-01-46-16.jpg",
+        },
+        {
+          FacultyID: 11,
+          FacultyName: "Ms. Rachita Mehta",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification:
+            "A PHD Scholar (pursuing), M.ed, B.ed, B.com",
+          FacultyExperience: "22+ Years",
+          FacultyWorkingSince: "March-2023",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/387---29-04-2023-12-07-40.jpg",
+        },
+        {
+          FacultyID: 12,
+          FacultyName: "Prof. Dixita Kagathara",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification:
+            "Ph.D.(Pursuing), M.Tech. (Web Technology)",
+          FacultyExperience: "15+ Years",
+          FacultyWorkingSince: "Jul-2009",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/9---28-04-2023-02-06-37.jpg",
+        },
+        {
+          FacultyID: 13,
+          FacultyName: "Prof. Swati Sharma",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "PhD(Pursuing), M.Tech. (CSE)",
+          FacultyExperience: "16+ Years",
+          FacultyWorkingSince: "May-2013",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/11---29-04-2023-01-44-21.jpg",
+        },
+        {
+          FacultyID: 14,
+          FacultyName: "Prof. Mayur Padia",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "M.E. (CE)",
+          FacultyExperience: "16+ Years",
+          FacultyWorkingSince: "Jul-2011",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/13---28-04-2023-02-07-48.jpg",
+        },
+        {
+          FacultyID: 15,
+          FacultyName: "Prof. Vijay Shekhat",
+          FacultyDesignation: "Assistant Professor",
+          FacultyEducationQualification: "M.E. (CE)",
+          FacultyExperience: "12+ Years",
+          FacultyWorkingSince: "Jun-2012",
+          FacultyImage:
+            "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/16---28-04-2023-02-08-00.jpg",
+        },
+      ];
+
+      let clutter = "";
+      faculties.map((faculty) => {
+        clutter += `
+                 <div class="card">
+                     <div class="image">
+                         <img src="${faculty.FacultyImage}" alt="" />
+                     </div>
+                     <div class="content">
+                         <div class="name">
+                             <h2 class="name">${faculty.FacultyName}</h2>
+                         </div>
+                         <div class="desg">
+                             <h3 class="desg">${faculty.FacultyDesignation}</h3>
+                         </div>
+                         <div class="badges">
+                             <div class="exp">
+                                 <span class="badge">${faculty.FacultyExperience}</span>
+                             </div>
+                             <div class="working-since">
+                                 <span class="badge-time">${faculty.FacultyWorkingSince}</span>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             `;
+      });
+      document.querySelector(".container").innerHTML = clutter;
+
+      let students = [
+        {
+          StudentID: 1,
+          StudentName: "Jane Smith",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "3rd Year",
+          StudentEnrollment: "EN1234567890",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+        {
+          StudentID: 2,
+          StudentName: "Jane Doe",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "2nd Year",
+          StudentEnrollment: "EN1234567658",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+        {
+          StudentID: 3,
+          StudentName: "Valeri Howland",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "1st Year",
+          StudentEnrollment: "EN1234561234",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+        {
+          StudentID: 4,
+          StudentName: "Armando Monteith",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "3rd Year",
+          StudentEnrollment: "EN1234567826",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+        {
+          StudentID: 5,
+          StudentName: "Harry Payne",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "4th Year",
+          StudentEnrollment: "EN1234567848",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+        {
+          StudentID: 6,
+          StudentName: "Carl Todd",
+          StudentCourse: "B.Tech Computer Science",
+          StudentYear: "4th Year",
+          StudentEnrollment: "EN1234567889",
+          StudentImage: "https://via.placeholder.com/150",
+        },
+      ];
+
+      let clutterStudent = "";
+      students.map((student) => {
+        clutterStudent += `
+                <div class="card">
+                    <div class="image">
+                        <img src="${student.StudentImage}" alt="" />
+                    </div>
+                    <div class="content">
+                        <div class="name">
+                            <h2 class="name">${student.StudentName}</h2>
+                        </div>
+                        <div class="desg">
+                            <h3 class="desg">${student.StudentCourse}</h3>
+                        </div>
+                        <div class="badges">
+                            <div class="exp">
+                                <span class="badge">${student.StudentEnrollment}</span>
+                            </div>
+                            <div class="working-since">
+                                <span class="badge-time">${student.StudentYear}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+      });
+      document.querySelector(".container").innerHTML = clutterStudent;
+
+      let products = [
+        {
+          ProductID: 1,
+          ProductName: "Laptop",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 2,
+          ProductName: "Mobile",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 3,
+          ProductName: "Toaster",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 4,
+          ProductName: "Desktop",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 5,
+          ProductName: "iPhone",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 6,
+          ProductName: "iMac",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 7,
+          ProductName: "iPad",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 8,
+          ProductName: "macbook",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 9,
+          ProductName: "ear buds",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+        {
+          ProductID: 10,
+          ProductName: "neck band",
+          ProductCategory: "Electronics",
+          ProductPrice: "$1200",
+          ProductImage: "https://via.placeholder.com/150",
+        },
+      ];
+
+      let clutterProducts = "";
+      products.map((product) => {
+        clutterProducts += `
+                <div class="card">
+                    <div class="image">
+                        <img src="${product.ProductImage}" alt="" />
+                    </div>
+                    <div class="content">
+                        <div class="name">
+                            <h2 class="name">${product.ProductName.toUpperCase()}</h2>
+                        </div>
+                        <div class="badges">
+                            <div class="exp">
+                                <span class="badge">${
+                                  product.ProductCategory
+                                }</span>
+                            </div>
+                            <div class="working-since">
+                                <span class="badge-time">${
+                                  product.ProductPrice
+                                }</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+      });
+      document.querySelector(".container-product").innerHTML = clutterProducts;
+    </script>
+
+    <script>
+      // * c
+      // Demonstrate different array functions like push, pop, shift, unshift, splice, sort etc.
+      let nums = [1, 2, 3, 4, 5];
+      nums.push(6);
+      nums.pop();
+      nums.shift();
+      nums.unshift(16);
+      nums.splice(1, 2);
+      nums.sort();
+      console.log(nums);
+    </script>
+  </body>
+</html>

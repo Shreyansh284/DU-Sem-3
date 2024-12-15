@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab-11</title>
+    <style>
+      body {
+        overflow: hidden;
+        background-color: #ffffff;
+      }
+
+      .display {
+        padding: 10px;
+        width: 200px;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .calculator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #C4DAD2;
+      }
+
+      .numbers {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+      }
+
+      .control,
+      .operators,
+      .group1,
+      .group2,
+      .group3,
+      .group4 {
+        display: flex;
+        gap: 20px;
+      }
+
+      .number,
+      .operator {
+        border: none;
+        outline: none;
+        padding: 10px;
+        cursor: pointer;
+        min-width: 50px;
+        background-color: #185519;
+        color: whitesmoke;
+        font-size: 15px;
+      }
+
+      .allclear,
+      .equal {
+        font-size: 15px;
+        border: none;
+        outline: none;
+        padding: 10px;
+        cursor: pointer;
+        min-width: 50px;
+        background-color: #E8B86D;
+        color: whitesmoke;
+      }
+
+      .display {
+        min-width: 150px;
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+        background-color: whitesmoke;
+        color: #185519;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- 1. WAP to create a basic graphical Calculator using HTML and JavaScript.(A) -->
+    <div class="container">
+      <div class="calculator">
+        <div class="display"></div>
+        <div class="numbers">
+          <div class="control">
+            <button class="allclear">AC</button>
+            <button class="equal">=</button>
+          </div>
+          <div class="operators">
+            <button class="operator">+</button>
+            <button class="operator">-</button>
+            <button class="operator">*</button>
+          </div>
+          <div class="group1">
+            <button class="operator">/</button>
+            <button class="operator">%</button>
+            <button class="number">0</button>
+          </div>
+          <div class="group2">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+          </div>
+          <div class="group3">
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+          </div>
+          <div class="group4">
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const display = document.querySelector(".display");
+      document.querySelector(".allclear").addEventListener("click", () => {
+        display.innerHTML = "";
+      });
+
+      document.querySelectorAll(".number").forEach((number) => {
+        number.addEventListener("click", (e) => {            
+          display.innerHTML += e.target.textContent;
+        });
+      });
+      document.querySelectorAll(".operator").forEach((operator) => {
+        operator.addEventListener("click", (e) => {            
+          display.innerHTML += e.target.textContent;
+        });
+      });
+      document.querySelector(".equal").addEventListener("click", () => {
+        const equation = display.textContent;
+        try {
+          const result = eval(`${equation}`);
+          display.innerHTML = eval(`${equation}`) ?? "";
+        } catch (error) {
+          display.innerHTML =` <p style="color:red">${equation}</p>`;
+        }
+      });
+      
+
+
+    </script>
+  </body>
+</html>

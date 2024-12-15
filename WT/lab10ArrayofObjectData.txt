@@ -1,0 +1,39 @@
+https://codeshare.io/vA4KeK
+
+https://darshan.ac.in/faculty-list/btech-computer
+
+let faculties = [
+	{
+		FacultyID: 1,
+		FacultyName: "Dr. Gopi Sanghani",
+		FacultyDesignation: "Dean - School of Computer Science",
+		FacultyEducationQualification: "Ph.D. , M.E. (CE)",
+		FacultyExperience: "22+ Years",
+    FacultyWorkingSince: "Jul-2012",
+		FacultyImage: "https://du-website.s3.ap-south-1.amazonaws.com/U01/Faculty-Photo/5---29-04-2023-11-00-29.jpg"
+	},
+	// Add more 15 faculty objects here
+]
+
+let students= [
+	{
+		StudentID: 1,
+		StudentName: "Jane Smith",
+		StudentCourse: "B.Tech Computer Science",
+		StudentYear: "3rd Year",
+		StudentEnrollment: "EN1234567890",
+    StudentImage: "https://via.placeholder.com/150"
+	},
+	// Add more 5 student objects here
+]
+
+let products= [
+	{
+		ProductID: 1,
+		ProductName: "Laptop",
+		ProductCategory: "Electronics",
+		ProductPrice: "$1200",
+		ProductImage: "https://via.placeholder.com/150"
+	},
+	// Add more 10 product objects here
+]

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #result {
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <h1>Number to Words Converter</h1>
+    <button onclick="convertNumber()">Convert Number</button>
+    <div id="result"></div> -->
+
+    <!-- * 1 to 5 -->
+    <script>
+      // * 1
+      //   let num = parseInt(prompt("Enter a number : "));
+      //   let factors = [];
+      //   for (let i = 1; i <= num; i++) {
+      //     if (num % i === 0) {
+      //       factors.push(i);
+      //     }
+      //   }
+      //   alert(factors);
+      // * 2
+      //   let num1 = parseInt(prompt("Enter first number : "));
+      //   let num2 = parseInt(prompt("Enter second number : "));
+      //   let nums = [];
+      //   for (let i = num1; i <= num2; i++) {
+      //     nums.push(i);
+      //   }
+      //   alert(nums);
+      // * 3
+
+      // IN JS FILE
+
+      // * 4
+      //   function gcd(a, b) {
+      //     if (b === 0) {
+      //       return a;
+      //     }
+      //     return gcd(b, a % b);
+      //   }
+      //   let num1 = parseInt(prompt("Enter the first number: "));
+      //   let num2 = parseInt(prompt("Enter the second number: "));
+
+      //   let result = gcd(num1, num2);
+      //   alert(`The GCD of ${num1} and ${num2} is: ${result}`);
+      // * 5
+      //   let num = parseInt(prompt("Enter a two-digit number:"));
+      //   if (num >= 10 && num <= 99) {
+      //     let digit1 = parseInt(num.toString()[0]);
+      //     let digit2 = parseInt(num.toString()[1]);
+
+      //     let result = Math.pow(digit1, digit2);
+
+      //     alert(
+      //       `The result of ${digit1} multiplied by itself ${digit2} times is: ${result}`
+      //     );
+      //   } else {
+      //     alert("Please enter a valid two-digit number.");
+      //   }
+    </script>
+    <!-- * 6 -->
+    <!-- <script>
+      // * 6
+      function convertNumber() {
+        let num = prompt("Enter a number in the range of 0-999");
+        let result = document.getElementById("result");
+
+        if (isNaN(num)) {
+          result.textContent = "Not a number";
+        } else {
+          num = parseInt(num);
+          if (num < 0 || num > 999) {
+            result.textContent = "Out of range";
+          } else {
+            result.textContent = numberToWords(num);
+          }
+        }
+      }
+
+      function numberToWords(num) {
+        const ones = [
+          "Zero",
+          "One",
+          "Two",
+          "Three",
+          "Four",
+          "Five",
+          "Six",
+          "Seven",
+          "Eight",
+          "Nine",
+        ];
+        const teens = [
+          "Eleven",
+          "Twelve",
+          "Thirteen",
+          "Fourteen",
+          "Fifteen",
+          "Sixteen",
+          "Seventeen",
+          "Eighteen",
+          "Nineteen",
+        ];
+        const tens = [
+          "",
+          "Ten",
+          "Twenty",
+          "Thirty",
+          "Forty",
+          "Fifty",
+          "Sixty",
+          "Seventy",
+          "Eighty",
+          "Ninety",
+        ];
+
+        if (num === 0) return ones[0];
+
+        let words = "";
+
+        if (num >= 100) {
+          words += ones[Math.floor(num / 100)] + " Hundred";
+          num %= 100;
+          if (num > 0) words += " and ";
+        }
+
+        if (num >= 20) {
+          words += tens[Math.floor(num / 10)];
+          num %= 10;
+          if (num > 0) words += "-" + ones[num];
+        } else if (num >= 10) {
+          words += teens[num - 11];
+        } else if (num > 0) {
+          words += ones[num];
+        }
+
+        return words;
+      }
+    </script> -->
+    <!-- * 7 -->
+    <!-- <script>
+      let str = prompt("Enter A word : ");
+      str.toLowerCase();
+      let firstIndex = str.indexOf("a");
+      let lastIndex = str.lastIndexOf("a");
+
+      if (firstIndex === -1 || lastIndex === -1 || firstIndex === lastIndex) {
+        alert("The vowel 'a' does not occur twice or more in the string.");
+      } else {
+        let substring = str.substring(firstIndex + 1, lastIndex);
+        alert(
+          `First occurrence of 'a': ${firstIndex}\nLast occurrence of 'a': ${lastIndex}\nString between them: ${substring}`
+        );
+      }
+    </script> -->
+  </body>
+</html>
